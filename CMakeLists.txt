@@ -1,3 +1,8 @@
-idf_component_register(
-	SRCS "TinyGPSPlus/src/TinyGPS++.cpp"
-    INCLUDE_DIRS "TinyGPSPlus/src" "include")
+add_library(tinygps-espidf STATIC
+    TinyGPSPlus/src/TinyGPS++.cpp
+)
+
+target_include_directories(tinygps-espidf PUBLIC
+    TinyGPSPlus/src
+    include
+)
