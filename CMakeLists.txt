@@ -1,8 +1,5 @@
-add_library(tinygps-espidf STATIC
-    TinyGPSPlus/src/TinyGPS++.cpp
-)
-
-target_include_directories(tinygps-espidf PUBLIC
-    TinyGPSPlus/src
-    include
+idf_component_register(
+        SRCS "TinyGPS++.cpp"
+        INCLUDE_DIRS "include"
+        REQUIRES driver freertos nav shared
 )
